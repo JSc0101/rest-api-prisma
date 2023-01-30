@@ -1,4 +1,6 @@
 import { Request, Response } from "express";
-export const getUser = (req: Request, res: Response) => {
-  res.json({ Welcome: "Hello welcome to my api use prisma" });
+import { prisma } from "../database/index.prisma";
+export const getUser = async (req: Request, res: Response) => {
+  const users = await prisma.user.findMany();
+  res.json(users);
 };
