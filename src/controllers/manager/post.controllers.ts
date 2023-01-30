@@ -1,4 +1,4 @@
-import { prisma } from "../database/index.prisma";
+import { prisma } from "../../database/index.prisma";
 import { Request, Response } from "express";
 
 export const createUser = async (req: Request, res: Response) => {
